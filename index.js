@@ -14,7 +14,6 @@ server.use(bodyParser.json());
 
 server.get("/blog", (req, res) => {
     res.setHeader('Content-Type','application/json');
-    res.setHeader();
     res.json(content.blog);
 });
 

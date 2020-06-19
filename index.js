@@ -4,17 +4,19 @@ const server = express();
 const fetch = require('node-fetch');
 const content = require('./content');
 var cors = require('cors');
+const prerender = require('prerender-node');
 
 server.use(bodyParser.json());
 server.use(cors());
-app.use(require('prerender-node').set('prerenderToken', 'HIPPHB7tYds41GKF2c7t'));
+server.use(prerender).set('prerenderToken', 'HIPPHB7tYds41GKF2c7t');
 
+const local = false;
 
 var corsOptions = {
     origin: 'https://botsuruguay.com'
   }
 
-server.get("/blog", cors(), (req, res) => {
+server.get("/blog", cors(corsOptions), (req, res) => {
     res.setHeader('Content-Type','application/json');
     res.status(200);
     let body = content.blog;
@@ -22,24 +24,24 @@ server.get("/blog", cors(), (req, res) => {
 });
 
 
-server.get("/bots", cors() , (req, res) => {
+server.get("/bots", cors(corsOptions) , (req, res) => {
     res.setHeader('Content-Type','application/json');
     res.status(200);
     let body = content.bots;
     res.send(body);
 });
 
-server.get("/features", cors() ,(req, res) => {
+server.get("/features", cors(corsOptions) ,(req, res) => {
     res.setHeader('Content-Type','application/json');
     res.status(200);
     let body = content.features;
     res.send(body);
 });
 
-const local = false;
 
 
-server.post("/", (req, res) => {
+
+/*server.post("/", (req, res) => {
 
     var headers = {
         "Content-Type": "application/json"
@@ -55,7 +57,7 @@ server.post("/", (req, res) => {
             res.json(respuestaBasica(json.fulfillmentText));
         });
     
-    });
+    });*/
 
 
 

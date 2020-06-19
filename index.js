@@ -3,25 +3,25 @@ const bodyParser = require('body-parser');
 const server = express();
 const fetch = require('node-fetch');
 const content = require('./content');
-var cors = require('cors')
+//var cors = require('cors')
 
 server.use(bodyParser.json());
 
-var corsOptions = {
+/*var corsOptions = {
     origin: 'http://botsuruguay.com',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
+  }*/
 
-server.get("/blog", cors(corsOptions), (req, res) => {
+server.get("/blog", (req, res) => {
     res.send(content.blog);
 });
 
 
-server.get("/bots", cors(corsOptions), (req, res) => {
+server.get("/bots", (req, res) => {
     res.send(content.bots);
 });
 
-server.get("/features", cors(corsOptions), (req, res) => {
+server.get("/features",  (req, res) => {
     res.send(content.features);
 });
 

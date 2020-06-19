@@ -29,7 +29,7 @@ server.get("/features",  (req, res) => {
     res.json(content.features);
 });
 
-const local = true;
+const local = false;
 
 
 server.post("/", (req, res) => {

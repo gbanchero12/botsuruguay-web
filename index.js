@@ -3,18 +3,20 @@ const bodyParser = require('body-parser');
 const server = express();
 const fetch = require('node-fetch');
 const content = require('./content');
-//var cors = require('cors')
+var cors = require('cors')
 
 server.use(bodyParser.json());
 
-/*var corsOptions = {
+var corsOptions = {
     origin: 'http://botsuruguay.com',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }*/
+  }
 
-server.get("/blog", (req, res) => {
+server.get("/blog", cors(), (req, res) => {
     res.setHeader('Content-Type','application/json');
-    res.json(content.blog);
+    res.status(200);
+    let body = JSON.stringify(content.blog);
+    res.send(body);
 });
 
 
@@ -26,7 +28,7 @@ server.get("/features",  (req, res) => {
     res.json(content.features);
 });
 
-const local = false;
+const local = true;
 
 
 server.post("/", (req, res) => {

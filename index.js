@@ -10,7 +10,7 @@ server.use(cors());
 
 
 var corsOptions = {
-    origin: 'http://botsuruguay.com'
+    origin: 'https://botsuruguay.com'
   }
 
 server.get("/blog", cors(corsOptions), (req, res) => {

@@ -13,6 +13,7 @@
     "es6-promise": "^4.2.8",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "prerender-node": "^3.2.5"
   }
 }

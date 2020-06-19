@@ -7,6 +7,7 @@ var cors = require('cors');
 
 server.use(bodyParser.json());
 server.use(cors());
+server.use(require('prerender-node'));
 
 
 var corsOptions = {

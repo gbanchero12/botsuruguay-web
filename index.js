@@ -3,19 +3,20 @@ const bodyParser = require('body-parser');
 const server = express();
 const fetch = require('node-fetch');
 const content = require('./content');
-var cors = require('cors')
+var cors = require('cors');
 
 server.use(bodyParser.json());
+server.use(cors());
+
 
 var corsOptions = {
-    origin: 'http://botsuruguay.com',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    origin: 'http://botsuruguay.com'
   }
 
 server.get("/blog", cors(), (req, res) => {
     res.setHeader('Content-Type','application/json');
     res.status(200);
-    let body = JSON.stringify(content.blog);
+    let body = content.blog;
     res.send(body);
 });
 

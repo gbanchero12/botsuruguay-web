@@ -13,16 +13,18 @@ server.use(bodyParser.json());
   }*/
 
 server.get("/blog", (req, res) => {
-    res.send(content.blog);
+    res.setHeader('Content-Type','application/json');
+    res.setHeader();
+    res.json(content.blog);
 });
 
 
 server.get("/bots", (req, res) => {
-    res.send(content.bots);
+    res.json(content.bots);
 });
 
 server.get("/features",  (req, res) => {
-    res.send(content.features);
+    res.json(content.features);
 });
 
 const local = false;

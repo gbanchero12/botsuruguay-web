@@ -32,8 +32,8 @@ const blog = {
     "desc9":"A nadie le gusta hacer el mismo trabajo una y otra vez durante un largo período de tiempo. En el caso de los seres humanos esto trae problemas, como estar propenso a equivocaciones. Los chatbots automatizan estas tareas que deben realizarse una y otra vez. También ofrecen la opción de dirigir el contacto hacia un agente, en caso que el usuario así lo prefiera. Esto ayuda a ahorrar tiempo y disminuir la cantidad de errores, aumentando la productividad en pocas semanas.",
     "titulo10":"Solicitud de datos",
     "desc10":"Está bien pedirles datos a los usuarios que compartan su nombre, edad, ubicación, etc. Esto permite proporcionar una forma de interacción personalizada en el futuro. Se puede solicitar una audiencia a futuro, para continuar la comunicación en otras plataformas si el chat no es conveniente en ese caso en particular.",
-    "titulo11":"'Referencias:'",
-    "desc11":"'El articulo 'Build Operate Transfer (BOT) Model in Software Outsourcing' de Saigontechnology.",
+    "titulo11":"Referencias:",
+    "desc11":'El articulo "Build Operate Transfer (BOT) Model in Software Outsourcing" de Saigontechnology.',
     "desc12":"El artículo 'Top 5 Benefits Of Using Chatbots For Your Business' de Chatbotsmagazine"}
     }
 

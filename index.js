@@ -13,7 +13,7 @@ var corsOptions = {
     origin: 'http://botsuruguay.com'
   }
 
-server.get("/blog", cors(), (req, res) => {
+server.get("/blog", cors(corsOptions), (req, res) => {
     res.setHeader('Content-Type','application/json');
     res.status(200);
     let body = content.blog;
@@ -21,12 +21,18 @@ server.get("/blog", cors(), (req, res) => {
 });
 
 
-server.get("/bots", (req, res) => {
-    res.json(content.bots);
+server.get("/bots", cors(corsOptions) , (req, res) => {
+    res.setHeader('Content-Type','application/json');
+    res.status(200);
+    let body = content.bots;
+    res.send(body);
 });
 
-server.get("/features",  (req, res) => {
-    res.json(content.features);
+server.get("/features", cors(corsOptions) ,(req, res) => {
+    res.setHeader('Content-Type','application/json');
+    res.status(200);
+    let body = content.features;
+    res.send(body);
 });
 
 const local = false;
